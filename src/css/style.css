@@ -166,9 +166,10 @@ a:active {
 
 /*-----------------------SPLASH--------------------------*/
 header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/img/hero.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   height: 100vh;
 }
 
@@ -321,4 +322,44 @@ header {
 
 .city-feature {
   margin-bottom: 5px;
+}
+
+
+/*-----------------------TESTIMONIALS--------------------------*/
+
+.section-testimonials {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url(img/back-customers.jpg);
+  background-size: cover;
+  color: white;
+  background-attachment: fixed;
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  line-height: 1.45em;
+  position: relative;
+  margin-top: 40px;
+}
+
+blockquote:before {
+  content: "\201C";
+  font-size: 5em;
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -5gipx;
+}
+
+cite {
+  font-size: 0.9em;
+  margin-top: 25px;
+  display: block;
+}
+
+cite img {
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
 }
