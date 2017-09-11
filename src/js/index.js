@@ -15,5 +15,5 @@ window.onscroll = () => {
 const hungry = document.getElementById('js--scroll-to-plans')
 const showMore = document.getElementById('js--scroll-to-start')
 
-hungry.onclick = () => smoothScroll.scrollTo('section-plans')
-showMore.onclick = () => smoothScroll.scrollTo('section-features')
+hungry.onclick = () => smoothScroll.scrollTo('section-plans', 2000)
+showMore.onclick = () => smoothScroll.scrollTo('section-features', 1000)

@@ -5,9 +5,9 @@ const smoothScroll = {
     clearTimeout(this.timer)
   },
 
-  scrollTo: function(id) {
+  scrollTo: function(id, duration=1000) {
     const settings = {
-      duration: 2000,
+      duration: duration,
       easing: {
         outQuint: function(x, t, b, c, d) {
           return (c * ((t = t / d - 1) * t * t * t * t + 1) + b)
