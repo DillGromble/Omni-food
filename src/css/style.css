@@ -35,9 +35,28 @@ section {
 
 .box {
   padding: 1%;
+  transition: opacity 1.75s;
 }
 
 
+
+/*----------------------ANIMATIONS------------------------*/
+
+
+.hide { opacity: 0; }
+.appear { opacity: 1; }
+
+.pulse { animation: pulse 0.7s ease-in-out }
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.rise {
+  top: 0 !important;
+}
 /*-----------------------HEADER--------------------------*/
 h1, h2, h3 {
   font-weight: 300;
@@ -307,6 +326,7 @@ header {
   text-align: right;
   padding-right: 3%;
   margin-top: 30px;
+  position: relative;
 }
 
 .steps-box:last-child {
@@ -316,6 +336,10 @@ header {
 
 .app-screen {
   width: 40%;
+  top: 100vh;
+  right: 0;
+  position: absolute;
+  transition: top 0.4s ease-in-out;
 }
 
 .works-step {
