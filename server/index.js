@@ -2,15 +2,20 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const path = require('path')
+const morgan = require('morgan')
 
-
+app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(express.static(path.join(__dirname, '..', 'src')))
 app.use(express.static(path.join(__dirname, '..', 'assets')))
 
-app.use('*', (req, res) => { res.sendFile(__dirname, '..', 'src/index.html') })
+app.use('/api/email', (req, res, next) => {
+  res.send(req.body)
+})
+
+app.use('*', (req, res) => { res.send('Looks like you\'re lost') })
 
 app.use((err, req, res, next) => {
   console.error(err)

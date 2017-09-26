@@ -79,7 +79,7 @@ const formNewsletter = document.getElementById('news')
 const formMessage = document.getElementById('message')
 
 form.onsubmit = (event) => {
-  event.preventDefault()
+  // event.preventDefault()
   console.log(formName.value)
   console.log(formEmail.value)
   console.log(formFindUs.value)
