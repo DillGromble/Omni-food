@@ -3,6 +3,8 @@ const app = express()
 const bodyParser = require('body-parser')
 const path = require('path')
 const morgan = require('morgan')
+const transporter = require('./mailService')
+
 
 app.use(morgan('dev'))
 app.use(bodyParser.json())
@@ -12,7 +14,16 @@ app.use(express.static(path.join(__dirname, '..', 'src')))
 app.use(express.static(path.join(__dirname, '..', 'assets')))
 
 app.use('/api/email', (req, res, next) => {
-  res.send(req.body)
+  const mailOptions = {
+    from: req.body.from,
+    to: 'whitejosh42@gmail.com',
+    subject: 'tasty testing',
+    text: req.body.message
+  }
+  transporter.sendMail(mailOptions, (err, info) => {
+    if (err) console.error(err)
+    else console.log('Message sent: ' + info.response)
+  })
 })
 
 app.use('*', (req, res) => { res.send('Looks like you\'re lost') })
