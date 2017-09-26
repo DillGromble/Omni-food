@@ -67,3 +67,23 @@ for (let i = 0; i < navBarLinks.length; i++) {
   currentLink.onclick = () => smoothScroll.scrollTo(section, 1000)
 }
 
+
+
+/*--------------------------------FORM----------------------------------------*/
+
+const form = document.getElementsByTagName('form')[0]
+const formName = document.getElementById('name')
+const formEmail = document.getElementById('email')
+const formFindUs = document.getElementById('find-us')
+const formNewsletter = document.getElementById('news')
+const formMessage = document.getElementById('message')
+
+form.onsubmit = (event) => {
+  event.preventDefault()
+  console.log(formName.value)
+  console.log(formEmail.value)
+  console.log(formFindUs.value)
+  console.log(formNewsletter.checked)
+  console.log(formMessage.value)
+}
+

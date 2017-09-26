@@ -270,7 +270,13 @@ header {
 .sticky-nav .logo-black { display: block; }
 .sticky-nav .logo { display: none; }
 
+.mobile-nav {
+  height: 32px;
+  width: auto;
+  float: right;
+  display: none;
 
+}
 
 /*-----------------------FEATURES--------------------------*/
 .section-features .long-copy {
